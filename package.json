@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint": "tslint -c tslint.json -e 'src/*.d.ts' -p tsconfig.json 'src/**/*.ts'",
     "precommit": "lint-staged"
   },
   "repository": {
@@ -37,7 +37,7 @@
   "lint-staged": {
     "*.ts": [
       "prettier --write",
-      "tslint -c tslint.json -p tsconfig.json --fix",
+      "tslint -c tslint.json -p tsconfig.json -e 'src/*.d.ts' --fix",
       "git add"
     ]
   }
